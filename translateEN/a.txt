@@ -1,0 +1,6 @@
+We previously used a different h2(key, n) that was not constant.  That is a 
+          horrifically bad idea, unless you can prove that series will never produce
+          any identical numbers that overlap when you mod them by hashsize, for all
+          subranges from i to i+hashsize, for all i.  It's not worth investigating,
+          since there was no clear benefit from using that hash function, and it was
+          broken.
